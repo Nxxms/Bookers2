@@ -1,0 +1,37 @@
+<!-- 部分テンプレートの指定 -->
+<%= render 'books/userinfo',user: @user, book: @book_new %>
+
+<div class="container">
+  <div class="row">
+ 	<div class="col-xs-9">
+  	<h2>Book detail</h2>
+  	  <table class="table table-striped">
+  	  	<tbody>
+  	  	  <tr>
+  	  	  	<td>
+              <%= link_to user_path(@user) do %>
+              <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
+              <br>
+              <%= @user.name %>
+              <% end %>
+            </td>
+  	  	  	<td>
+              <%= @book.title %>
+            </td>
+  	  	  	<td>
+              <%= @book.body %>
+            </td>
+            <% if @user.id == current_user.id %>
+  	  	  	<td>
+              <%= link_to "Edit",edit_book_path(@book.id), class: "btn btn-success" %>
+            </td>
+  	  	  	<td>
+              <%= link_to "Destroy", book_path(@book.id), method: :delete, class: "btn btn-danger", method: :delete, "data-confirm" => "本当に消しますか？"%>
+            </td>
+            <% end %>
+  	  	  </tr>
+  	  </tbody>
+  	 </table>
+  	</div>
+   </div>
+  </div>

@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ body { padding-top: 60px; }
+
+ .top { color: white; }
+
+ btn btn-success btn-block { color: #666666; }
+
+ .flash { color: green; }
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
