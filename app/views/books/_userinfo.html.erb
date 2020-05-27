@@ -4,9 +4,13 @@
    <% if book.errors.any? %>
   <h2><%= pluralize(book.errors.count, "error") %> prohibited this product from being saved:</h2>
   <br>
-    <% book.errors.full_messages.each do |message| %>
-    <%= message %>
-    <% end %>
+    <ul>
+      <% book.errors.full_messages.each do |message| %>
+      <li>
+        <%= message %>
+      </li>
+      <% end %>
+    </ul>
    <% end %>
  </div>
 </div>
